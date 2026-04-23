@@ -1,0 +1,15 @@
+services:
+  nginx:
+    image: YOUR_DOCKERHUB_USERNAME/nginx:YOUR_SHA
+    container_name: nginx-container
+    ports:
+      - "80:80"
+    depends_on:
+      - frontend
+      - backend
+  frontend:
+    image: YOUR_DOCKERHUB_USERNAME/frontend:YOUR_SHA
+    container_name: frontend-container
+  backend:
+    image: YOUR_DOCKERHUB_USERNAME/backend:YOUR_SHA
+    container_name: backend-container
